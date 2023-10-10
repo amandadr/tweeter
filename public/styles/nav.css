@@ -1,0 +1,36 @@
+nav {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  display: flex;
+}
+.nav-span {
+  margin-left: 1.5em;
+  margin-right: auto;
+  font-family: 'Bungee';
+  font-size: 50px;
+  display: flex;
+  align-items:center;
+}
+.nav-right {
+  margin-left: 1em;
+  margin-right: 1.5em;
+  font-family: 'Source Sans 3';
+  font-size: .75em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.nav-aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-bounce {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
