@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -16,23 +19,65 @@ html {
 * {
   font-family: 'Source Sans 3', sans-serif;
 }
+
 body {
   font-family: 'Source Sans 3', sans-serif;
   color: #545149;
-  background-color:#f3ede6;
+  background-color: #f6f3e9;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.container {
+.main-container {
   width: 90%;
   color: #545149;
-  background-color:#f3ede6;
+  background-color: #f6f3e9;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+.tweet-box {
+  width: 96%;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #000;
+}
+
+.tweet-head {
+  height: 1em;
+  border: 1px dashed #000;
+  width: 97%;
+  margin: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tweet-article {
+  width: 97%;
+  margin: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tweet-foot {
+  height: 1em;
+  border: 1px dashed #000;
+  height: 1em;
+  width: 97%;
+  margin: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

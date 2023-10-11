@@ -1,8 +1,8 @@
 .header1 {
   height: 520px;
   width: 100%;
-  background-color: #f0db1d;
-  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+  background-color: #cbb87b;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   display: flex;
   position: relative;
   flex-wrap: wrap;
@@ -11,7 +11,7 @@
 
 .pad {
   padding-top: 10px;
- }
+}
 
 .avatar {
   display: flex;
