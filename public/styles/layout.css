@@ -41,41 +41,128 @@ body {
 }
 
 .tweet-box {
+  height: fit-content;
   width: 96%;
   margin: 1em;
+  border: 3px solid #42251a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid #000;
+}
+.tweet-box:hover {
+  box-shadow: 3px 2px #3f549d
 }
 
+/* HEADER */
 .tweet-head {
-  height: 1em;
-  border: 1px dashed #000;
+  height: 2em;
   width: 97%;
   margin: 4px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-head-left {
+  display: flex;
   align-items: center;
 }
 
+.tweet-avatar {
+  height: 1.75em;
+  width: 1.75em;
+  margin: 2px;
+  fill: #3f549d;
+}
+
+.tweet-username {
+  height: 1.25em;
+  width: auto;
+  margin: 2px;
+  color: #663a29;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-head-right {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-handle {
+  height: 1.25em;
+  width: auto;
+  margin: 2px;
+  margin-block-start: .5em;
+  font-size: 12px;
+  color: #293766;
+  display: flex;
+  align-items: center;
+}
+
+/* BODY */
 .tweet-article {
   width: 97%;
   margin: 4px;
+  color: #1a2342;
   display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
+/* FOOTER */
 .tweet-foot {
-  height: 1em;
-  border: 1px dashed #000;
-  height: 1em;
+  height: 2em;
   width: 97%;
   margin: 4px;
+  border-top: 3px solid #42251a;
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.tweet-foot-left {
+  display: flex;
+  justify-content: left;
+}
+
+.tweet-age {
+  height: 1.25em;
+  width: auto;
+  margin: 2px;
+  font-size: 11px;
+  color: #1a2342;
+  display: flex;
+}
+
+.tweet-foot-right {
+  margin-inline-end: auto;
+}
+
+.tweet-flag {
+  height: 1.25em;
+  width: 1em;
+  margin: 2px;
+  fill: #3f549d;
+}
+.tweet-flag:hover {
+  fill:#665829
+}
+
+.tweet-retweet {
+  height: 1.25em;
+  width: 1em;
+  margin: 2px;
+  fill: #3f549d;
+}
+.tweet-retweet:hover {
+  fill:#665829
+}
+
+.tweet-love {
+  height: 1.25em;
+  width: 1em;
+  margin: 2px;
+  fill: #3f549d;
+}.tweet-love:hover {
+  fill:#665829
 }
 
 /*
