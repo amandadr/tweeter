@@ -1,0 +1,26 @@
+.header1 {
+  height: 520px;
+  width: 100%;
+  background-color: #f0db1d;
+  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.pad {
+  padding-top: 10px;
+ }
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
