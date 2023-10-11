@@ -39,9 +39,15 @@
   background-color: #4056a1;
   background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
 }
+/* 
+redOutput {
+  font-family: 'Bungee', sans-serif;
+  color:firebrick;
+} */
 
 .counter {
   display: flex;
   justify-content: right;
   font-family: 'Bungee', sans-serif;
+  color:slategrey
 }
