@@ -1,0 +1,47 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#tweet-text {
+  margin-top: 15px;
+  height: 2em;
+  display: flex;
+  border: 0px solid #000;
+  border-bottom-width: 3px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.tweet-form-bottom {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+.tweet-btn {
+  display: flex;
+  align-items: center;
+  height: 1.5em;
+  border: 0px solid #fff;
+  color:#ffe;
+  background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
+}
+
+.counter {
+  display: flex;
+  justify-content: right;
+  font-family: 'Bungee', sans-serif;
+}

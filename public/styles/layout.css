@@ -19,9 +19,20 @@ html {
 body {
   font-family: 'Source Sans 3', sans-serif;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color:#f3ede6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.container {
+  width: 90%;
+  color: #545149;
+  background-color:#f3ede6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
