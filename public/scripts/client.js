@@ -8,33 +8,33 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
     },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
 
 $(document).ready(function () {
   const createTweetElement = function (tweetObj) {
-    console.log($(tweetObj));
 
     // tweet-avatar -username -handle -age
     const $tweetMarkup = $(`
@@ -98,11 +98,34 @@ $(document).ready(function () {
     for (const tweet of tweetsArr) {
       const $tweet = createTweetElement(tweet);
 
-      $('.main-container').append($tweet); 
+      $('.main-container').append($tweet);
     }
   };
-
+  
   renderTweets(tweetData);
   
-});//docready
+  // grab the form
+  const $form = $('.tweet-form');
+  
+  // attach a submit handler to it
+  $form.on('submit', (evt) => {
+    // stop the browse from submitting the form
+    evt.preventDefault();
 
+    // grab the data from the form
+    const tweetData = $form.serialize();
+
+    // make a post request to the server
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: tweetData,
+      success: () => {
+        console.log('the post request resolved successfully', tweetData);
+      },
+    });
+
+
+  });
+
+});//docready
