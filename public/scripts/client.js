@@ -4,9 +4,19 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+// escape XSS,
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
+
+$(document).ready(function () {
+  
   const createTweetElement = function (tweetObj) {
+    const escapeName = `<p>${escape(tweetObj.user.name)}</p>`
+    const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`
 
     // -avatar -username -handle -age
     const $tweetMarkup = $(`
@@ -17,7 +27,7 @@ $(document).ready(function () {
             src="${tweetObj.user.avatars}">
             </img>
             <div class="tweet-username">
-            ${tweetObj.user.name}
+            ${escapeName}
             </div>
           </div>
           <div class="tweet-handle">
@@ -25,7 +35,7 @@ $(document).ready(function () {
           </div>
         </header>
         <article class="tweet-article">
-        ${tweetObj.content.text}
+        ${escapeContent}
         </article>
         <footer class="tweet-foot">
           <div class="tweet-foot-left">
@@ -59,14 +69,14 @@ $(document).ready(function () {
         </footer>
       </section>
     `)
-    console.log(timeago.format(`${tweetObj.created_at}`))
     return $tweetMarkup;
   }
 
   const renderTweets = function (tweetsArr) {
     for (const tweet of tweetsArr) {
       const $tweet = createTweetElement(tweet);
-      if ($tweet.content.text.length > 140) {
+      if (tweet.content.text.length > 140) {
+        console.log(`${tweet.content.text.length} > 140 characters`);
         alert("Your tweet message is too long!")
       } else {
         $('.user-feed').prepend($tweet);
@@ -106,6 +116,7 @@ $(document).ready(function () {
       data: tweetData,
       success: () => {
         console.log('the post request resolved successfully', tweetData);
+        location.reload();
       },
     });
 
