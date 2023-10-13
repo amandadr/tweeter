@@ -1,5 +1,5 @@
 .header1 {
-  height: 520px;
+  height: 25rem;
   width: 100%;
   background-color: #cbb87b;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
@@ -10,13 +10,17 @@
 }
 
 .pad {
-  padding-top: 10px;
+  padding-top: 1.5rem;
 }
 
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#avatarImg {
+  height: 15rem;
 }
 
 .name {

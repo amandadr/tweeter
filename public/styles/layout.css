@@ -32,7 +32,7 @@ body {
   align-items: center;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   /* these styles will be applied if the screen width is less than 500px */
   body {
     background-color: lightblue;
@@ -53,147 +53,39 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 /* --------------------------- */
 
 /* MAIN: USER-FEED */
-.error-log {
-  display: flex;
-  align-items: center;
-  border: .125rem;
-}
-
-.tweet-box {
-  height: fit-content;
-  width: 96%;
-  margin: 1rem;
-  border: 0.2rem solid #42251a;
+.user-feed {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.tweet-box:hover {
-  box-shadow: 0.2rem .125rem #3f549d
+.error-log {
+ 
+  font-size: 1em;
+  margin-top: .75rem;
+  display: flex;
+  align-items: center;
+  border: .125rem solid #b22222;
+  border-radius: 1rem;
+
+}
+
+/* ERROR DISPLAY */
+#errorLog {
+  display: inline;
+  padding-inline: .8rem;
+}
+
+.errorIcon {
+  height: 1.5rem;
+  padding: .25rem;
+  fill: firebrick;
 }
 
 /* --------------------------- */
-
-/* MAIN: HEADER */
-.tweet-head {
-  height: 2rem;
-  width: 97%;
-  margin: 4px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.tweet-head-left {
-  display: flex;
-  align-items: center;
-}
-
-.tweet-avatar {
-  height: 1.75rem;
-  width: 1.75rem;
-  margin: .175rem;
-  fill: #3f549d;
-}
-
-.tweet-username {
-  height: 1.25rem;
-  width: auto;
-  margin: .175rem;
-  color: #663a29;
-  display: flex;
-  align-items: center;
-}
-
-.tweet-handle {
-  height: 1.25rem;
-  width: auto;
-  margin: .175rem;
-  margin-block-start: .5rem;
-  font-size: .8rem;
-  color: #293766;
-  display: flex;
-  align-items: center;
-}
-
-/* --------------------------- */
-
-/* MAIN: BODY */
-.tweet-article {
-  width: 94%;
-  margin: .4rem;
-  color: #1a2342;
-  display: flex;
-}
-
-/* --------------------------- */
-
-/* MAIN: FOOTER */
-.tweet-foot {
-  height: 2rem;
-  width: 97%;
-  margin: 4px;
-  border-top: 3px solid #42251a;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.tweet-foot-left {
-  display: flex;
-  justify-content: left;
-}
-
-.tweet-age {
-  height: 1.25rem;
-  width: auto;
-  margin: .175rem;
-  font-size: 11px;
-  color: #1a2342;
-  display: flex;
-}
-
-.tweet-foot-right {
-  display: flex;
-  flex-direction: row;
-
-}
-
-.tweet-flag {
-  height: 1.25rem;
-  width: 1rem;
-  margin: .175rem;
-  fill: #3f549d;
-}
-
-.tweet-flag:hover {
-  fill: #665829
-}
-
-.tweet-retweet {
-  height: 1.25rem;
-  width: 1rem;
-  margin: .175rem;
-  fill: #3f549d;
-}
-
-.tweet-retweet:hover {
-  fill: #665829
-}
-
-.tweet-love {
-  height: 1.25rem;
-  width: 1rem;
-  margin: .175rem;
-  fill: #3f549d;
-}
-
-.tweet-love:hover {
-  fill: #665829
-}
