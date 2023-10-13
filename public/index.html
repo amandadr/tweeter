@@ -27,7 +27,9 @@
 
   <!-- External JS -->
   <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script defer type="text/javascript" src="/scripts/client.js"></script>
@@ -62,10 +64,15 @@
   <!-- Page-specific (main) content here -->
   <main class="main-container">
 
+    <!-- DISPLAY ERRORS (unless ya dont) -->
+    <div class="error-log">
+      <h3 id="errorLog">c'est comme ca</h3>
+    </div>
+    
     <!-- CREATE A TWEET -->
     <section class="new-tweet">
       <form class="tweet-form" , action="/tweets/" , method="POST">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?" ></textarea>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?" maxlength="400"></textarea>
         <footer class="tweet-form-bottom">
           <button class="tweet-btn" , type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>

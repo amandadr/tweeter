@@ -12,8 +12,12 @@ const escape = function (str) {
 };
 
 
+
 $(document).ready(function () {
-  
+  // hide the error container 
+  $('.error-log').hide();
+
+  //-- (LET'S GET) FUNCY --//
   const createTweetElement = function (tweetObj) {
     const escapeName = `<p>${escape(tweetObj.user.name)}</p>`
     const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`
@@ -74,17 +78,16 @@ $(document).ready(function () {
 
   const renderTweets = function (tweetsArr) {
     for (const tweet of tweetsArr) {
+      const tweetLength = tweet.content.text.length;
       const $tweet = createTweetElement(tweet);
-      if (tweet.content.text.length > 140) {
-        console.log(`${tweet.content.text.length} > 140 characters`);
-        alert("Your tweet message is too long!")
+      if (tweetLength > 140 || tweetLength < 1) {
+        return false;
       } else {
         $('.user-feed').prepend($tweet);
       }
     }
   };
 
-  //load the tweets
   const loadTweets = function () {
     $.ajax({
       method: 'GET',
@@ -96,29 +99,61 @@ $(document).ready(function () {
     })
   }
 
+  const preventSubmit = function (buttonStr) {
+    $(buttonStr).on("click", ((e) => {
+      e.preventDefault();
+      return false;
+    }))
+  }
+
+  const updateErrorText = function (txt) {
+    $('#errorLog').text(txt);
+  }
+
   loadTweets();
-  
-  // grab the form
+
+
+
+  // SUBMIT FORM //
   const $form = $('.tweet-form');
-  
-  // attach a submit handler to it
+
   $form.on('submit', (evt) => {
-    // stop the browse from submitting the form
+    // stop the browser from submitting the form
     evt.preventDefault();
 
     // grab the data from the form
     const tweetData = $form.serialize();
+    const $formText = $form[0][0].value;
 
-    // make a post request to the server
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: tweetData,
-      success: () => {
-        console.log('the post request resolved successfully', tweetData);
-        location.reload();
-      },
-    });
+    // ERROR CASES //
+    if ($formText.length > 140) {
+      let message = "Oo they're ramblin' again... (tone it down, you're over count)";
+      preventSubmit(".tweet-btn");
+      $('.error-log').slideDown("slow");
+      updateErrorText(message);
+      console.log("tweet over max length:", $formText.length);
+      return false;
+    } else if ($formText.length < 1) {
+      let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet"
+      preventSubmit(".tweet-btn");
+      $('.error-log').slideDown("slow");
+      updateErrorText(message);
+      console.log("tweet empty :(");
+      return false;
+    } else {
+      $('.error-log').hide();
+      // make a post request to the tweets
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweetData,
+        success: () => {
+          console.log('the post request resolved successfully', $formText);
+          location.reload();
+        },
+      });
+    }
+
 
 
   });

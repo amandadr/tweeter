@@ -20,6 +20,8 @@ html {
   font-family: 'Source Sans 3', sans-serif;
 }
 
+/* BODY */
+/* includes nav bar */
 body {
   font-family: 'Source Sans 3', sans-serif;
   color: #545149;
@@ -30,6 +32,19 @@ body {
   align-items: center;
 }
 
+@media only screen and (max-width: 1023px) {
+  /* these styles will be applied if the screen width is less than 500px */
+  body {
+    background-color: lightblue;
+  }
+}
+/* --------------------------- */
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+/* MAIN */
 .main-container {
   width: 90%;
   color: #545149;
@@ -40,22 +55,34 @@ body {
   justify-content: center;
 }
 
+/* --------------------------- */
+
+/* MAIN: USER-FEED */
+.error-log {
+  display: flex;
+  align-items: center;
+  border: .125rem;
+}
+
 .tweet-box {
   height: fit-content;
   width: 96%;
-  margin: 1em;
-  border: 3px solid #42251a;
+  margin: 1rem;
+  border: 0.2rem solid #42251a;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .tweet-box:hover {
-  box-shadow: 3px 2px #3f549d
+  box-shadow: 0.2rem .125rem #3f549d
 }
 
-/* HEADER */
+/* --------------------------- */
+
+/* MAIN: HEADER */
 .tweet-head {
-  height: 2em;
+  height: 2rem;
   width: 97%;
   margin: 4px;
   display: flex;
@@ -69,43 +96,47 @@ body {
 }
 
 .tweet-avatar {
-  height: 1.75em;
-  width: 1.75em;
-  margin: 2px;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin: .175rem;
   fill: #3f549d;
 }
 
 .tweet-username {
-  height: 1.25em;
+  height: 1.25rem;
   width: auto;
-  margin: 2px;
+  margin: .175rem;
   color: #663a29;
   display: flex;
   align-items: center;
 }
 
 .tweet-handle {
-  height: 1.25em;
+  height: 1.25rem;
   width: auto;
-  margin: 2px;
-  margin-block-start: .5em;
-  font-size: 12px;
+  margin: .175rem;
+  margin-block-start: .5rem;
+  font-size: .8rem;
   color: #293766;
   display: flex;
   align-items: center;
 }
 
-/* BODY */
+/* --------------------------- */
+
+/* MAIN: BODY */
 .tweet-article {
   width: 94%;
-  margin: .4em;
+  margin: .4rem;
   color: #1a2342;
   display: flex;
 }
 
-/* FOOTER */
+/* --------------------------- */
+
+/* MAIN: FOOTER */
 .tweet-foot {
-  height: 2em;
+  height: 2rem;
   width: 97%;
   margin: 4px;
   border-top: 3px solid #42251a;
@@ -120,9 +151,9 @@ body {
 }
 
 .tweet-age {
-  height: 1.25em;
+  height: 1.25rem;
   width: auto;
-  margin: 2px;
+  margin: .175rem;
   font-size: 11px;
   color: #1a2342;
   display: flex;
@@ -131,38 +162,38 @@ body {
 .tweet-foot-right {
   display: flex;
   flex-direction: row;
-  
+
 }
 
 .tweet-flag {
-  height: 1.25em;
-  width: 1em;
-  margin: 2px;
+  height: 1.25rem;
+  width: 1rem;
+  margin: .175rem;
   fill: #3f549d;
 }
+
 .tweet-flag:hover {
-  fill:#665829
+  fill: #665829
 }
 
 .tweet-retweet {
-  height: 1.25em;
-  width: 1em;
-  margin: 2px;
+  height: 1.25rem;
+  width: 1rem;
+  margin: .175rem;
   fill: #3f549d;
 }
+
 .tweet-retweet:hover {
-  fill:#665829
+  fill: #665829
 }
 
 .tweet-love {
-  height: 1.25em;
-  width: 1em;
-  margin: 2px;
+  height: 1.25rem;
+  width: 1rem;
+  margin: .175rem;
   fill: #3f549d;
-}.tweet-love:hover {
-  fill:#665829
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.tweet-love:hover {
+  fill: #665829
+}
