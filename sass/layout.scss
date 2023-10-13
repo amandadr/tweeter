@@ -3,10 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- html {
-   box-sizing: border-box;
-   font-size: 16px;
-   font-family: 'Source Sans 3', sans-serif;
+html {
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -18,50 +17,19 @@
 /*
  * Global layout stuff
  */
+* {
+  font-family: 'Source Sans 3', sans-serif;
+}
 
 /* BODY */
 /* includes nav bar */
 body {
-  height: 100%;
+  font-family: 'Source Sans 3', sans-serif;
   background-color: #f2f1e9;
   background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-}
-
-body:before {
-  pointer-events: none;
-}
-
-#toTop {
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  text-align: center;
-  border-radius: .25rem;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
-  opacity: 0;
-  fill: #665829;
-  visibility: hidden;
-  z-index: 1000;
-}
-
-#toTop::after {
-  color: transparent;
-}
-
-#toTop:active {
-  box-shadow: inset;
-}
-#toTop.show {
-  opacity: .8;
-  visibility: visible;
 }
 
 /* --------------------------- */
@@ -152,7 +120,6 @@ body:before {
     align-items: center;
   }
 
-  /* ERROR DISPLAY */
   .error-log {
 
     font-size: 1em;
@@ -164,6 +131,7 @@ body:before {
 
   }
 
+  /* ERROR DISPLAY */
   #errorLog {
     display: inline;
     padding-inline: .8rem;

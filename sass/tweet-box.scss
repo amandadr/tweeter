@@ -1,0 +1,113 @@
+/* TWEET BOX */
+.tweet-box {
+  height: fit-content;
+  width: 96%;
+  margin: 1rem;
+  background-color: #fefffc;
+  background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+  border: .2rem solid #42251a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tweet-box:hover {
+  box-shadow: 0.2rem .125rem #3f549d
+}
+
+/* TWEETBOX: HEADER */
+.tweet-head {
+  height: 2rem;
+  width: 97%;
+  padding-top: .3rem;
+  margin: .4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-head-left {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-avatar {
+  height: 2.25rem;
+  width: 2.25rem;
+  margin: .175rem;
+  fill: #3f549d;
+}
+
+.tweet-username {
+  height: 1.25rem;
+  width: auto;
+  margin: .175rem;
+  color: #663a29;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-handle {
+  height: 1.25rem;
+  width: auto;
+  margin: .175rem;
+  margin-right: .75rem;
+  margin-block-start: .5rem;
+  font-size: .8rem;
+  color: #293766;
+  display: flex;
+  align-items: center;
+}
+
+
+/* TWEETBOX: BODY */
+.tweet-article {
+  width: 94%;
+  margin: .4rem;
+  color: #1a2342;
+  display: flex;
+}
+
+
+/* TWEETBOX: FOOTER */
+.tweet-foot {
+  height: 2rem;
+  width: 97%;
+  margin: .4rem;
+  border-top: 3px solid #42251a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-foot-left,
+.tweet-foot-right {
+  display: flex;
+  justify-content: left;
+}
+
+/* foot-left */
+.tweet-age {
+  height: 1.25rem;
+  width: auto;
+  margin: .175rem;
+  font-size: 11px;
+  color: #1a2342;
+  display: flex;
+}
+
+/* foot-right */
+.tweet-flag,
+.tweet-retweet,
+.tweet-love {
+  height: 1.25rem;
+  width: 1rem;
+  margin: .175rem;
+  fill: #3f549d;
+}
+
+.tweet-flag:hover,
+.tweet-retweet:hover,
+.tweet-love:hover {
+  fill: #665829
+}

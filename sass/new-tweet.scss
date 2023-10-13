@@ -7,27 +7,24 @@
 
 .tweet-form {
   width: 100%;
-  margin: 1rem, 0;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #tweet-text {
   width: 100%;
-  height: 3.75rem;
-  margin-top: 1rem;
-  border: 0rem;
-  border-bottom: 0.2rem solid #42251a;
+  margin-top: 15px;
+  border: .2rem solid hsl(0, 0%, 85%);
+  border-bottom: 3px solid #42251a;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
   background-color: transparent;
   outline: none;
   resize: none;
-  font-size: 1rem;
-}
-
-#tweet-text::placeholder {
-  padding-top: 2rem;
-  text-align:left
+  display: hide;
+  align-items: center;
 }
 
 .tweet-form-bottom {

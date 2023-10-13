@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // --- our code goes here ---
   let count = 0;
-  $('#tweet-text').on('input', function () {
+  $('#tweet-text').on('input', function() {
     count = this.value.length - 1;
     count++;
     const form = $(this).closest('.tweet-form');
@@ -15,5 +15,5 @@ $(document).ready(function () {
       $(this).css('color', 'firebrick');
       $(counting).css('color', 'firebrick');
     }
-  })
+  });
 });

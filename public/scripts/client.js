@@ -14,14 +14,30 @@ const escape = function (str) {
 
 
 $(document).ready(function () {
-  // hide the error container 
+  // hide the error container
   $('.error-log').hide();
   $('.tweet-form').hide();
 
-  //-- (LET'S GET) FUNCY --//
+  // scroll back to top
+  var $toTop = $('#toTop');
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+      $toTop.addClass('show');
+    } else {
+      $toTop.removeClass('show');
+    }
+  });
+
+  $toTop.on('click', function (evt) {
+    evt.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  //-- (LET'S GET) FUNCY HELP --//
   const createTweetElement = function (tweetObj) {
-    const escapeName = `<p>${escape(tweetObj.user.name)}</p>`
-    const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`
+    const escapeName = `<p>${escape(tweetObj.user.name)}</p>`;
+    const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`;
 
     // -avatar -username -handle -age
     const $tweetMarkup = $(`
@@ -73,9 +89,9 @@ $(document).ready(function () {
           </div>
         </footer>
       </section>
-    `)
+    `);
     return $tweetMarkup;
-  }
+  };
 
   const renderTweets = function (tweetsArr) {
     for (const tweet of tweetsArr) {
@@ -95,60 +111,73 @@ $(document).ready(function () {
       url: '/tweets',
       success: (tweets) => {
         console.log(tweets);
-        renderTweets(tweets)
+        renderTweets(tweets);
       }
-    })
-  }
+    });
+  };
 
-  const preventSubmit = function (buttonStr) {
-    $(buttonStr).on("click", ((e) => {
-      e.preventDefault();
-      return false;
-    }))
-  }
+  const preventSubmit = function (htmlClass) {
+    $(htmlClass).on("click", ((evt) => {
+      evt.preventSubmit();
+    }));
+  };
 
   const updateErrorText = function (txt) {
     $('#errorLog').text(txt);
-  }
+  };
 
   loadTweets();
 
 
-  
+
   // SUBMIT FORM //
   const $form = $('.tweet-form');
-  
+  const $formText = $form[0][0].value;
+  const formBtn = $('.tweet-btn')
+
   // display the tweet form
-  $('.nav-right').on("click", () => {
-    if($form.is(':visible')) {
-      
+  $('.nav-right').on("click", (evt) => {
+    evt.preventDefault();
+
+    if ($form.is(':visible')) {
+      $form.slideUp("slow")
+    } else {
+      $form.slideDown("slow");
+
+      setTimeout(function () {
+        $formText.focus();
+      }, 1000);
+
+      $formText.on("keypress", () => {
+        if ($formText.length === 0) {
+          $("$formText::placeholder").css("color", "transparent")
+        }
+      })
     }
-    $form.slideDown("slow");
-  })
+  });
 
   $form.on('submit', (evt) => {
 
     // stop the browser from submitting the form
-    evt.preventDefault();
+    evt.preventSubmit();
 
     // grab the data from the form
     const tweetData = $form.serialize();
-    const $formText = $form[0][0].value;
 
     // ERROR CASES //
     if ($formText.length > 140) {
       let message = "Oo they're ramblin' again... (tone it down, you're over count)";
-      preventSubmit(".tweet-btn");
       $('.error-log').slideDown("slow");
       updateErrorText(message);
       console.log("tweet over max length:", $formText.length);
+      preventSubmit(".tweet-btn");
       return false;
     } else if ($formText.length < 1) {
-      let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet"
-      preventSubmit(".tweet-btn");
+      let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
       $('.error-log').slideDown("slow");
       updateErrorText(message);
       console.log("tweet empty :(");
+      preventSubmit(".tweet-btn");
       return false;
     } else {
       $('.error-log').hide();
@@ -159,13 +188,15 @@ $(document).ready(function () {
         data: tweetData,
         success: () => {
           console.log('the post request resolved successfully', $formText);
-          location.reload();
+          // setTimeout(() => { location.reload() }, 500)
         },
-      });
-    }
+        // error: (evt) => {
+        //   evt.preventDefault();
+        //   console.log('the post request was unsuccessful, see message:', $('#errorLog'));
+        //   return false;
+        // }
+      }); //ajax post
 
-
-
-  });
-
+    } // conditionals
+  }); //on submit
 });//docready
