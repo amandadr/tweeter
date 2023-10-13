@@ -17,7 +17,8 @@
 .tweet-head {
   height: 2rem;
   width: 97%;
-  margin: 4px;
+  padding-top: .3rem;
+  margin: .4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,8 +30,8 @@
 }
 
 .tweet-avatar {
-  height: 1.75rem;
-  width: 1.75rem;
+  height: 2.25rem;
+  width: 2.25rem;
   margin: .175rem;
   fill: #3f549d;
 }
@@ -48,6 +49,7 @@
   height: 1.25rem;
   width: auto;
   margin: .175rem;
+  margin-right: .75rem;
   margin-block-start: .5rem;
   font-size: .8rem;
   color: #293766;
@@ -69,7 +71,7 @@
 .tweet-foot {
   height: 2rem;
   width: 97%;
-  margin: 4px;
+  margin: .4rem;
   border-top: 3px solid #42251a;
   display: flex;
   flex-direction: row;

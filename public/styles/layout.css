@@ -44,8 +44,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/* MAIN */
-.main-container {
+/* INSIDE */
+.inside-container {
   width: 90%;
   color: #545149;
   background-color: #f6f3e9;
@@ -58,7 +58,7 @@ body {
 
 /* --------------------------- */
 
-/* MAIN: USER-FEED */
+/* INSIDE: USER-FEED */
 .user-feed {
   display: flex;
   flex-direction: column;

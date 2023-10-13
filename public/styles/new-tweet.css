@@ -36,16 +36,21 @@
 }
 
 .tweet-btn {
+  height: 1.5em;
+  margin-left: .125rem;
   display: flex;
   align-items: center;
-  height: 1.5em;
-  border: 0px solid #fff;
   color:#ffe;
   background-color: #4056a1;
   background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
 }
 
+.tweet-btn:hover {
+  box-shadow: 0.2rem .125rem #42251a
+}
+
 .counter {
+  margin-right: .5rem;
   display: flex;
   justify-content: right;
   font-family: 'Bungee', sans-serif;
