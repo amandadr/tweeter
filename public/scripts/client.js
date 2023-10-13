@@ -16,6 +16,7 @@ const escape = function (str) {
 $(document).ready(function () {
   // hide the error container 
   $('.error-log').hide();
+  $('.tweet-form').hide();
 
   //-- (LET'S GET) FUNCY --//
   const createTweetElement = function (tweetObj) {
@@ -113,11 +114,20 @@ $(document).ready(function () {
   loadTweets();
 
 
-
+  
   // SUBMIT FORM //
   const $form = $('.tweet-form');
+  
+  // display the tweet form
+  $('.nav-right').on("click", () => {
+    if($form.is(':visible')) {
+      
+    }
+    $form.slideDown("slow");
+  })
 
   $form.on('submit', (evt) => {
+
     // stop the browser from submitting the form
     evt.preventDefault();
 

@@ -3,6 +3,8 @@
   height: fit-content;
   width: 96%;
   margin: 1rem;
+  background-color: #fefffc;
+  background-image: url("https://www.transparenttextures.com/patterns/dust.png");
   border: .2rem solid #42251a;
   display: flex;
   flex-direction: column;
@@ -78,7 +80,8 @@
   justify-content: space-between;
 }
 
-.tweet-foot-left, .tweet-foot-right {
+.tweet-foot-left,
+.tweet-foot-right {
   display: flex;
   justify-content: left;
 }
@@ -94,13 +97,17 @@
 }
 
 /* foot-right */
-.tweet-flag, .tweet-retweet, .tweet-love {
+.tweet-flag,
+.tweet-retweet,
+.tweet-love {
   height: 1.25rem;
   width: 1rem;
   margin: .175rem;
   fill: #3f549d;
 }
 
-.tweet-flag:hover, .tweet-retweet:hover, .tweet-love:hover {
+.tweet-flag:hover,
+.tweet-retweet:hover,
+.tweet-love:hover {
   fill: #665829
 }

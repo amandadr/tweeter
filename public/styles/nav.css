@@ -1,12 +1,15 @@
-@media only screen and (max-width: 1063px) {
+@media only screen and (max-width: 1023px) {
   nav {
     height: 7rem;
-    width: 100%;
+    width: 100vw;
+    padding-left: .1rem;
+    padding-right: .1rem;
     background-color: #cbb87b;
     background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
     color: #f6f3e9;
     display: flex;
     position: sticky;
+    /* I prefer to use sticky over fixed position as it allows for less shifting */
   }
 
   sansBold {
@@ -24,13 +27,13 @@
   #logo {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
+    margin-inline-start: 3rem;
     font-family: 'Bungee', sans-serif;
     font-size: 2.25rem;
   }
 
   .nav-right {
-    margin-right: 1rem;
+    margin-inline-end: 3rem;
     font-family: 'Source Sans 3';
     font-size: 1.25rem;
     display: flex;
@@ -46,15 +49,18 @@
   }
 
   .fa-bounce {
+    color: #828b97;
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
 }
-@media only screen and (min-width: 1064px) {
+@media only screen and (min-width: 1024px) {
   nav {
     height: 7rem;
-    width: 100%;
+    width: 100vw;
+    padding-left: .1rem;
+    padding-right: .1rem;
     background-color: #4056a1;
     background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
     color: #f6f3e9;
@@ -77,13 +83,13 @@
   #logo {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
+    margin-inline-start: 3rem;
     font-family: 'Bungee', sans-serif;
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .nav-right {
-    margin-right: 1rem;
+    margin-inline-end: 3rem;
     font-family: 'Source Sans 3';
     font-size: 1.25rem;
     display: flex;
@@ -99,6 +105,7 @@
   }
 
   .fa-bounce {
+    color: #828b97;
     display: flex;
     align-items: flex-end;
     justify-content: center;

@@ -16,12 +16,14 @@
 #tweet-text {
   width: 100%;
   margin-top: 15px;
-  border: 0px solid #42251a;
-  border-bottom-width: 3px;
+  border: .2rem solid hsl(0, 0%, 85%);
+  border-bottom: 3px solid #42251a;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
   background-color: transparent;
   outline: none;
   resize: none;
-  display: flex;
+  display: hide;
   align-items: center;
 }
 
