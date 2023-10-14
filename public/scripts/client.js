@@ -119,6 +119,7 @@ $(document).ready(function () {
   const preventSubmit = function (htmlClass) {
     $(htmlClass).on("click", ((evt) => {
       evt.preventSubmit();
+      return false;
     }));
   };
 
@@ -132,7 +133,7 @@ $(document).ready(function () {
 
   // SUBMIT FORM //
   const $form = $('.tweet-form');
-  const $formText = $form[0][0].value;
+  const $formText = $('#tweet-text');
   const formBtn = $('.tweet-btn')
 
   // display the tweet form
@@ -159,12 +160,13 @@ $(document).ready(function () {
   $form.on('submit', (evt) => {
 
     // stop the browser from submitting the form
-    evt.preventSubmit();
+    evt.preventDefault();
 
     // grab the data from the form
     const tweetData = $form.serialize();
 
     // ERROR CASES //
+    console.log($formText)
     if ($formText.length > 140) {
       let message = "Oo they're ramblin' again... (tone it down, you're over count)";
       $('.error-log').slideDown("slow");
