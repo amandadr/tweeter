@@ -1,0 +1,46 @@
+// variables
+$font-family_SS3: 'Source Sans 3', sans-serif;
+$font-family_Bungee: 'Bungee', sans-serif;
+
+$color_primary: #545149;
+$color_secondary: #f6f3e9;
+$color_tertiary: #1a2342;
+$color_error: #b22222;
+$color_border: #42251a;
+$color_icon: #3f549d;
+$color_accent: #665829;
+
+$background_primary: #f2f1e9;
+$background_blue: #4056a1;
+$background_yellow: #cbb87b;
+
+$border: .2rem solid $color_border;
+
+
+// @include
+@mixin emphasize() {
+  font-family: $font-family_SS3;
+  font-weight: 600;
+}
+
+@mixin flex-column($align: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+}
+
+@mixin flex-row($justify: center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+}
+
+@mixin background_birds() {
+    background-color: $background_yellow;
+    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+}
+
+@mixin background_tweeter() {
+  background-color: $background_blue;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
+}

@@ -1,60 +1,52 @@
+@import './partial';
+
 .new-tweet {
   width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column($align: center);
 }
 
 .tweet-form {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  @include flex-column($align: normal);
+  margin: 0 1rem;
 }
 
 #tweet-text {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 1rem;
   border: .2rem solid hsl(0, 0%, 85%);
-  border-bottom: 3px solid #42251a;
+  border-bottom: $border;
   border-top-right-radius: .5rem;
   border-top-left-radius: .5rem;
   background-color: transparent;
   outline: none;
   resize: none;
   display: hide;
-  align-items: center;
 }
 
 .tweet-form-bottom {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
+  margin-top: 0.3rem;
+  @include flex-row($justify: space-between);
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: $font-family_Bungee;
 }
 
 .tweet-btn {
   height: 1.5em;
   margin-left: .125rem;
-  display: flex;
-  align-items: center;
-  color:#ffe;
-  background-color: #4056a1;
-  background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
+  @include flex-column($align: center);
+  @include background_tweeter();
+  color: $color_secondary;
 }
 
 .tweet-btn:hover {
-  box-shadow: 0.2rem .125rem #42251a
+  box-shadow: 0.2rem .125rem $color_border
 }
 
 .counter {
   margin-right: .5rem;
-  display: flex;
-  justify-content: right;
-  font-family: 'Bungee', sans-serif;
-  color:slategrey
+  @include flex-row($justify: right);
+  font-family: $font-family_Bungee;
+  color: slategrey;
 }

@@ -1,145 +1,71 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+@import './partial';
+
+sansBold {
+  @include emphasize();
+}
+
 html {
-  box-sizing: border-box;
-  font-size: 16px;
+  color: $color_primary;
+	box-sizing: border-box;
+	font-size: 16px;
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-/*
- * Global layout stuff
- */
 * {
-  font-family: 'Source Sans 3', sans-serif;
+	box-sizing: inherit;
+	font-family: $font-family_SS3;
+	&:before {
+		box-sizing: inherit;
+	}
+	&:after {
+		box-sizing: inherit;
+	}
 }
 
-/* BODY */
-/* includes nav bar */
 body {
-  font-family: 'Source Sans 3', sans-serif;
-  background-color: #f2f1e9;
+	background-color: $background_primary;
+	background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
+	@include flex-column($align: center);
+}
+
+main, .user-feed {
+  @include flex-column($align: center);
+}
+
+.inside-container {
+  width: 90%;
+  background-color: $background_primary;
   background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column($align: center);
+  justify-content: center;
 }
 
-/* --------------------------- */
-
-/*
-* Additional CSS can be defined below or in other CSS files, as per instructions
-*/
-@media only screen and (max-width: 1023px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* INSIDE */
-  .inside-container {
-    width: 90%;
-    background-color: #f2f1e9;
-    background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* --------------------------- */
-
-  /* INSIDE: USER-FEED */
-  .user-feed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .error-log {
-
-    font-size: 1em;
-    margin-top: .75rem;
-    display: flex;
-    align-items: center;
-    border: .125rem solid #b22222;
-    border-radius: 1rem;
-
-  }
-
-  /* ERROR DISPLAY */
-  #errorLog {
-    display: inline;
-    padding-inline: .8rem;
-  }
-
-  .errorIcon {
-    height: 1.5rem;
-    padding: .25rem;
-    fill: firebrick;
-  }
+.error-log {
+  font-size: 1em;
+  margin-top: .75rem;
+  @include flex-column($align: center);
+  border: .125rem solid $color_error;
+  border-radius: 1rem;
 }
+
+#errorLog {
+  display: inline;
+  padding-inline: .8rem;
+}
+
+.errorIcon {
+  height: 1.5rem;
+  padding: .25rem;
+  fill: $color_error;
+}
+
 
 @media only screen and (min-width: 1024px) {
   main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-row($justify: center);
+    align-items: flex-start;
   }
-
-  /* INSIDE */
-  .inside-container {
-    margin-block-start: 4rem;
-    margin-inline-start: 6rem;
-    margin-inline-end: 2rem;
-    width: 90%;
-    color: #545149;
-    background-color: #f6f3e9;
-    background-color: #f2f1e9;
-    background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* --------------------------- */
-
-  /* INSIDE: USER-FEED */
-  .user-feed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .error-log {
-
-    font-size: 1em;
-    margin-top: .75rem;
-    display: flex;
-    align-items: center;
-    border: .125rem solid #b22222;
-    border-radius: 1rem;
-
-  }
-
-  /* ERROR DISPLAY */
-  #errorLog {
-    display: inline;
-    padding-inline: .8rem;
-  }
-
-  .errorIcon {
-    height: 1.5rem;
-    padding: .25rem;
-    fill: firebrick;
-  }
+	.inside-container {
+		margin-block-start: 4rem;
+		margin-inline-start: 6rem;
+		margin-inline-end: 2rem;
+	}
 }
