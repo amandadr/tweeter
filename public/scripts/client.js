@@ -162,19 +162,17 @@ $(document).ready(function () {
     // stop the browser from submitting the form
     evt.preventDefault();
 
-    // grab the data from the form
-    const tweetData = $form.serialize();
-
+    
     // ERROR CASES //
-    console.log($formText)
-    if ($formText.length > 140) {
+    console.log($formText[0].value)
+    if ($formText[0].value.length > 140) {
       let message = "Oo they're ramblin' again... (tone it down, you're over count)";
       $('.error-log').slideDown("slow");
       updateErrorText(message);
-      console.log("tweet over max length:", $formText.length);
+      console.log("tweet over max length:", $formText[0].value.length);
       preventSubmit(".tweet-btn");
       return false;
-    } else if ($formText.length < 1) {
+    } else if ($formText[0].value.length < 1) {
       let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
       $('.error-log').slideDown("slow");
       updateErrorText(message);
@@ -182,6 +180,8 @@ $(document).ready(function () {
       preventSubmit(".tweet-btn");
       return false;
     } else {
+      // grab the data from the form
+      const tweetData = $form.serialize();
       $('.error-log').hide();
       // make a post request to the tweets
       $.ajax({
@@ -189,7 +189,7 @@ $(document).ready(function () {
         url: '/tweets',
         data: tweetData,
         success: () => {
-          console.log('the post request resolved successfully', $formText);
+          console.log('the post request resolved successfully', $formText[0].value);
           // setTimeout(() => { location.reload() }, 500)
         },
         // error: (evt) => {
