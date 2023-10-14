@@ -96,10 +96,10 @@ $(document).ready(function () {
   const renderTweets = function (tweetsArr) {
     for (const tweet of tweetsArr) {
       const tweetLength = tweet.content.text.length;
-      const $tweet = createTweetElement(tweet);
       if (tweetLength > 140 || tweetLength < 1) {
         return false;
       } else {
+        const $tweet = createTweetElement(tweet);
         $('.user-feed').prepend($tweet);
       }
     }
@@ -190,7 +190,7 @@ $(document).ready(function () {
         data: tweetData,
         success: () => {
           console.log('the post request resolved successfully', $formText[0].value);
-          // setTimeout(() => { location.reload() }, 500)
+          setTimeout(() => { location.reload() }, 300)
         },
         // error: (evt) => {
         //   evt.preventDefault();
