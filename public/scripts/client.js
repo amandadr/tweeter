@@ -5,7 +5,7 @@
  */
 
 // escape XSS,
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -13,15 +13,15 @@ const escape = function (str) {
 
 
 
-$(document).ready(function () {
+$(document).ready(function() {
   // hide the error container
   $('.error-log').hide();
   $('.tweet-form').hide();
 
   // scroll back to top
-  var $toTop = $('#toTop');
+  let $toTop = $('#toTop');
 
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {
       $toTop.addClass('show');
     } else {
@@ -29,13 +29,13 @@ $(document).ready(function () {
     }
   });
 
-  $toTop.on('click', function (evt) {
+  $toTop.on('click', function(evt) {
     evt.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, '300');
   });
 
   //-- (LET'S GET) FUNCY HELP --//
-  const createTweetElement = function (tweetObj) {
+  const createTweetElement = function(tweetObj) {
     const escapeName = `<p>${escape(tweetObj.user.name)}</p>`;
     const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`;
 
@@ -93,7 +93,7 @@ $(document).ready(function () {
     return $tweetMarkup;
   };
 
-  const renderTweets = function (tweetsArr) {
+  const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
       const tweetLength = tweet.content.text.length;
       if (tweetLength > 140 || tweetLength < 1) {
@@ -105,7 +105,7 @@ $(document).ready(function () {
     }
   };
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -116,15 +116,23 @@ $(document).ready(function () {
     });
   };
 
-  const preventSubmit = function (htmlClass) {
+  const preventSubmit = function(htmlClass) {
     $(htmlClass).on("click", ((evt) => {
       evt.preventSubmit();
       return false;
     }));
   };
 
-  const updateErrorText = function (txt) {
+  const updateErrorText = function(txt) {
     $('#errorLog').text(txt);
+  };
+
+  const displayError = function (message, log) {
+    $('.error-log').slideDown("slow");
+    updateErrorText(message);
+    console.log(log);
+    preventSubmit(".tweet-btn");
+    return false;
   };
 
   loadTweets();
@@ -134,26 +142,25 @@ $(document).ready(function () {
   // SUBMIT FORM //
   const $form = $('.tweet-form');
   const $formText = $('#tweet-text');
-  const formBtn = $('.tweet-btn')
 
   // display the tweet form
   $('.nav-right').on("click", (evt) => {
     evt.preventDefault();
 
     if ($form.is(':visible')) {
-      $form.slideUp("slow")
+      $form.slideUp("slow");
     } else {
       $form.slideDown("slow");
 
-      setTimeout(function () {
+      setTimeout(function() {
         $formText.focus();
       }, 1000);
 
       $formText.on("keypress", () => {
         if ($formText.length === 0) {
-          $("$formText::placeholder").css("color", "transparent")
+          $("$formText::placeholder").css("color", "transparent");
         }
-      })
+      });
     }
   });
 
@@ -164,25 +171,23 @@ $(document).ready(function () {
 
     
     // ERROR CASES //
-    console.log($formText[0].value)
     if ($formText[0].value.length > 140) {
-      let message = "Oo they're ramblin' again... (tone it down, you're over count)";
-      $('.error-log').slideDown("slow");
-      updateErrorText(message);
-      console.log("tweet over max length:", $formText[0].value.length);
-      preventSubmit(".tweet-btn");
-      return false;
+      // over char count
+      const msg = "Oo they're ramblin' again... (tone it down, you're over count)";
+      const log = ("tweet over max length:", $formText[0].value.length);
+      displayError(msg, log);
     } else if ($formText[0].value.length < 1) {
-      let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
-      $('.error-log').slideDown("slow");
-      updateErrorText(message);
-      console.log("tweet empty :(");
-      preventSubmit(".tweet-btn");
-      return false;
+      // empty form
+      const msg = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
+      const log = ("tweet empty :(")
+      displayError(msg, log);
     } else {
-      // grab the data from the form
+      // success!
+      // serialize the data from the form
       const tweetData = $form.serialize();
+
       $('.error-log').hide();
+      
       // make a post request to the tweets
       $.ajax({
         method: 'POST',
@@ -190,13 +195,10 @@ $(document).ready(function () {
         data: tweetData,
         success: () => {
           console.log('the post request resolved successfully', $formText[0].value);
-          setTimeout(() => { location.reload() }, 300)
+          setTimeout(() => {
+            location.reload();
+          }, 300);
         },
-        // error: (evt) => {
-        //   evt.preventDefault();
-        //   console.log('the post request was unsuccessful, see message:', $('#errorLog'));
-        //   return false;
-        // }
       }); //ajax post
 
     } // conditionals
