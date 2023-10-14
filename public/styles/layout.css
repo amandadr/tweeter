@@ -3,10 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- html {
-   box-sizing: border-box;
-   font-size: 16px;
-   font-family: 'Source Sans 3', sans-serif;
+html {
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -18,54 +17,22 @@
 /*
  * Global layout stuff
  */
+* {
+  font-family: "Source Sans 3", sans-serif;
+}
 
 /* BODY */
 /* includes nav bar */
 body {
-  height: 100%;
+  font-family: "Source Sans 3", sans-serif;
   background-color: #f2f1e9;
   background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-}
-
-body:before {
-  pointer-events: none;
-}
-
-#toTop {
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  text-align: center;
-  border-radius: .25rem;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
-  opacity: 0;
-  fill: #665829;
-  visibility: hidden;
-  z-index: 1000;
-}
-
-#toTop::after {
-  color: transparent;
-}
-
-#toTop:active {
-  box-shadow: inset;
-}
-#toTop.show {
-  opacity: .8;
-  visibility: visible;
 }
 
 /* --------------------------- */
-
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
@@ -75,7 +42,6 @@ body:before {
     flex-direction: column;
     align-items: center;
   }
-
   /* INSIDE */
   .inside-container {
     width: 90%;
@@ -86,47 +52,38 @@ body:before {
     justify-content: center;
     align-items: center;
   }
-
   /* --------------------------- */
-
   /* INSIDE: USER-FEED */
   .user-feed {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .error-log {
-
     font-size: 1em;
-    margin-top: .75rem;
+    margin-top: 0.75rem;
     display: flex;
     align-items: center;
-    border: .125rem solid #b22222;
+    border: 0.125rem solid #b22222;
     border-radius: 1rem;
-
   }
-
   /* ERROR DISPLAY */
   #errorLog {
     display: inline;
-    padding-inline: .8rem;
+    padding-inline: 0.8rem;
   }
-
   .errorIcon {
     height: 1.5rem;
-    padding: .25rem;
+    padding: 0.25rem;
     fill: firebrick;
   }
 }
-
 @media only screen and (min-width: 1024px) {
   main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
   /* INSIDE */
   .inside-container {
     margin-block-start: 4rem;
@@ -142,36 +99,29 @@ body:before {
     justify-content: center;
     align-items: center;
   }
-
   /* --------------------------- */
-
   /* INSIDE: USER-FEED */
   .user-feed {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  /* ERROR DISPLAY */
   .error-log {
-
     font-size: 1em;
-    margin-top: .75rem;
+    margin-top: 0.75rem;
     display: flex;
     align-items: center;
-    border: .125rem solid #b22222;
+    border: 0.125rem solid #b22222;
     border-radius: 1rem;
-
   }
-
+  /* ERROR DISPLAY */
   #errorLog {
     display: inline;
-    padding-inline: .8rem;
+    padding-inline: 0.8rem;
   }
-
   .errorIcon {
     height: 1.5rem;
-    padding: .25rem;
+    padding: 0.25rem;
     fill: firebrick;
   }
 }

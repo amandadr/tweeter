@@ -104,4 +104,4 @@ const displayError = function(message, log) {
   return false;
 };
 
-module.exports = { escape, createTweetElement, renderTweets, loadTweets, preventSubmit, updateErrorText, displayError };
+module.exports = { loadTweets, displayError }; // only using loadTweets and displayError outside of this js file

@@ -5,7 +5,7 @@
  */
 
 // HELPERS
-const { escape, createTweetElement, renderTweets, loadTweets, preventSubmit, updateErrorText, displayError } = require('./client-helpers');
+const { loadTweets, displayError } = require('./client-helpers');
 
 
 $(document).ready(function() {

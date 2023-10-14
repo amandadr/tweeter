@@ -8,21 +8,17 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
-
   .pad {
     padding-top: 1rem;
   }
-
   .avatar {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   #avatarImg {
     height: 15rem;
   }
-
   .name {
     display: flex;
     align-items: center;
@@ -41,21 +37,17 @@
     flex-direction: column;
     justify-content: space-around;
   }
-
   .pad {
     padding-top: 1.5rem;
   }
-
   .avatar {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   #avatarImg {
     height: 38vh;
   }
-
   .name {
     display: flex;
     align-items: center;
