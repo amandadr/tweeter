@@ -1,29 +1,29 @@
 @import './partial';
 
-.main-header {
-  height: 60vh;
+.header1 {
+  height: 65vh;
   width: 100vw;
   @include background_birds();
   @include flex-column($align: center);
-  
-  .pad {
-    padding-top: 1rem;
-  }
-  
-  .avatar {
-    @include flex-column($align: center);
-    justify-content: center;
-    
-    #avatarImg {
-      height: 40vh;
-    }
-  }
-  
-  .name {
-    color: $color_border;
-    @include flex-column($align: center);
-    justify-content: center;
-  }
+}
+
+.pad {
+  padding-top: 1rem;
+}
+
+.avatar {
+  @include flex-column($align: center);
+  justify-content: center;
+}
+
+#avatarImg {
+  height: 40vh;
+}
+
+.name {
+  color: $color_border;
+  @include flex-column($align: center);
+  justify-content: center;
 }
 
 @media only screen and (min-width: 1024px) {
