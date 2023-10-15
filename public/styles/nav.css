@@ -1,101 +1,58 @@
+nav {
+  height: 7rem;
+  width: 100vw;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  color: #f6f3e9;
+  display: flex;
+  position: sticky;
+  /* I prefer to use sticky over fixed position as it allows for less debugging */
+}
+nav .nav-span {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .nav-span #logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline-start: 3rem;
+  font-family: "Bungee", sans-serif;
+  font-size: 2.25rem;
+}
+nav .nav-span .nav-right {
+  margin-inline-end: 3rem;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .nav-span .nav-right .nav-aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav .nav-span .nav-right .fa-bounce {
+  color: rgba(84, 81, 73, 0.75);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 @media only screen and (max-width: 1023px) {
   nav {
-    height: 7rem;
-    width: 100vw;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
     background-color: #cbb87b;
     background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
-    color: #f6f3e9;
-    display: flex;
-    position: sticky;
-    /* I prefer to use sticky over fixed position as it allows for less shifting */
-  }
-  sansBold {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 600;
-  }
-  .nav-span {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #logo {
-    display: flex;
-    align-items: center;
-    margin-inline-start: 3rem;
-    font-family: "Bungee", sans-serif;
-    font-size: 2.25rem;
-  }
-  .nav-right {
-    margin-inline-end: 3rem;
-    font-family: "Source Sans 3";
-    font-size: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .nav-aside {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .fa-bounce {
-    color: #828b97;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
   }
 }
 @media only screen and (min-width: 1024px) {
   nav {
-    height: 7rem;
-    width: 100vw;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
     background-color: #4056a1;
     background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
-    color: #f6f3e9;
-    display: flex;
-    position: sticky;
-  }
-  sansBold {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 600;
-  }
-  .nav-span {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #logo {
-    display: flex;
-    align-items: center;
-    margin-inline-start: 3rem;
-    font-family: "Bungee", sans-serif;
-    font-size: 2.25rem;
-  }
-  .nav-right {
-    margin-inline-end: 3rem;
-    font-family: "Source Sans 3";
-    font-size: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .nav-aside {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .fa-bounce {
-    color: #828b97;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
   }
 }

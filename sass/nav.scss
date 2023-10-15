@@ -1,0 +1,56 @@
+@import './partial';
+
+nav {
+  height: 7rem;
+  width: 100vw;
+  padding-left: .1rem;
+  padding-right: .1rem;
+  color: $color_secondary;
+  display: flex;
+  position: sticky;
+  /* I prefer to use sticky over fixed position as it allows for less debugging */
+  
+  .nav-span {
+    width: 100%;
+    @include flex-row($justify: space-between);
+    
+    #logo {
+      @include flex-column($align: center);
+      margin-inline-start: 3rem;
+      font-family: $font-family_Bungee;
+      font-size: 2.25rem;
+    }
+    
+    .nav-right {
+      margin-inline-end: 3rem;
+      font-size: 1.25rem;
+      @include flex-column($align: center);
+      justify-content: space-evenly;
+      
+      .nav-aside {
+        @include flex-row($justify: center);
+        align-items: center;
+      }
+      
+      .fa-bounce {
+        color: rgba($color_primary, 0.75);
+        @include flex-row($justify: center);
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    @include background_birds();
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    @include background_tweeter();
+  }
+}
