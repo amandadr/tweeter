@@ -1,24 +1,46 @@
 [
   {
     "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "name": "Scooby",
+      "avatars": "https://img.icons8.com/color/48/scooby-doo.png",
+      "handle": "@ScoobyDoobyDoo"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "Ruh-roh... RAGGY!!!"
     },
-    "created_at": 1697161910170
+    "created_at": 1697030790998
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "name": "Fred",
+      "avatars": "https://img.icons8.com/color/48/scooby-doo-fred-jones.png",
+      "handle": "@FredJones"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "I have to laugh at myself. Those two chickens tricked us!"
     },
-    "created_at": 1697248310170
+    "created_at": 1697117190998
+  },
+  {
+    "user": {
+      "name": "Daphne",
+      "avatars": "https://img.icons8.com/color/48/scooby-doo-daphne-blake.png",
+      "handle": "@DaphneBlake"
+    },
+    "content": {
+      "text": "I am so over this damsel in distress nonsense."
+    },
+    "created_at": 1697203590998
+  },
+  {
+    "user": {
+      "name": "Velma",
+      "avatars": "https://img.icons8.com/color/48/scooby-doo-velma-dinkley.png",
+      "handle": "@VelmaDinkley"
+    },
+    "content": {
+      "text": "That’s one fish story no one will believe."
+    },
+    "created_at": 1697289990998
   }
 ]
