@@ -39,3 +39,5 @@ Tweeter is a simple, single-page Twitter clone. A swarm of friends come to life 
 - [ ] a helpful 'back to top' button which disappears at the top of the page; click to jump back through your feed (and avoid having to confront that awkward thing you said back there).
 - [ ] relative sizing; desktop and tablet/mobile screen sizes are supported.
 
+### Thank you
+To LHL and all the mentors who helped make it happen :)
