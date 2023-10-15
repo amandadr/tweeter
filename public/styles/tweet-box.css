@@ -40,7 +40,8 @@
   color: #1a2342;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: normal;
+  justify-content: center;
 }
 .tweet-head .tweet-handle {
   height: 1.25rem;

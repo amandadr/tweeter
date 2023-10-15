@@ -9,7 +9,7 @@
     @include flex-column($align: normal);
     margin: 0 1rem;
     
-    #tweet-text {
+    #tweetText {
       width: 100%;
       margin-top: 1rem;
       border: .2rem solid hsl(0, 0%, 85%);

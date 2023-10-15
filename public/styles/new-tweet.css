@@ -11,7 +11,7 @@
   align-items: normal;
   margin: 0 1rem;
 }
-.new-tweet .tweet-form #tweet-text {
+.new-tweet .tweet-form #tweetText {
   width: 100%;
   margin-top: 1rem;
   border: 0.2rem solid hsl(0, 0%, 85%);

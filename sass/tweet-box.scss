@@ -37,7 +37,8 @@
       height: 1.25rem;
       margin: .175rem;
       color: $color_tertiary;
-      @include flex-column($align: center);
+      @include flex-column($align: normal);
+      justify-content: center;
     }
   }
   /* head-right */
