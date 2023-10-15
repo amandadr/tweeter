@@ -6,66 +6,74 @@ sansBold {
 
 html {
   color: $color_primary;
-	box-sizing: border-box;
-	font-size: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
+
 * {
-	box-sizing: inherit;
-	font-family: $font-family_SS3;
-	&:before {
-		box-sizing: inherit;
-	}
-	&:after {
-		box-sizing: inherit;
-	}
+  box-sizing: inherit;
+  font-family: $font-family_SS3;
+
+  &:before {
+    box-sizing: inherit;
+  }
+
+  &:after {
+    box-sizing: inherit;
+  }
 }
 
 body {
-	background-color: $background_primary;
-	background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
-	@include flex-column($align: center);
-}
-
-main, .user-feed {
-  @include flex-column($align: center);
-}
-
-.inside-container {
-  width: 90%;
   background-color: $background_primary;
   background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
   @include flex-column($align: center);
-  justify-content: center;
+
+  main,
+  .user-feed {
+    @include flex-column($align: center);
+
+    .inside-container {
+      width: 90%;
+      background-color: $background_primary;
+      background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
+      @include flex-column($align: center);
+      justify-content: center;
+
+      .error-log {
+        font-size: 1em;
+        margin-top: .75rem;
+        @include flex-column($align: center);
+        border: .125rem solid $color_error;
+        border-radius: 1rem;
+
+        .errorIcon {
+          height: 1.5rem;
+          padding: .25rem;
+          fill: $color_error;
+
+        }
+
+        #errorLog {
+          display: inline;
+          padding-inline: .8rem;
+        }
+      }
+    }
+  }
 }
 
-.error-log {
-  font-size: 1em;
-  margin-top: .75rem;
-  @include flex-column($align: center);
-  border: .125rem solid $color_error;
-  border-radius: 1rem;
-}
 
-#errorLog {
-  display: inline;
-  padding-inline: .8rem;
-}
-
-.errorIcon {
-  height: 1.5rem;
-  padding: .25rem;
-  fill: $color_error;
-}
 
 
 @media only screen and (min-width: 1024px) {
   main {
     @include flex-row($justify: center);
     align-items: flex-start;
+
+    .inside-container {
+      margin-block-start: 4rem;
+      margin-inline-start: 6rem;
+      margin-inline-end: 2rem;
+    }
   }
-	.inside-container {
-		margin-block-start: 4rem;
-		margin-inline-start: 6rem;
-		margin-inline-end: 2rem;
-	}
 }

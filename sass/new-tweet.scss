@@ -3,50 +3,50 @@
 .new-tweet {
   width: 90%;
   @include flex-column($align: center);
-}
-
-.tweet-form {
-  width: 100%;
-  @include flex-column($align: normal);
-  margin: 0 1rem;
-}
-
-#tweet-text {
-  width: 100%;
-  margin-top: 1rem;
-  border: .2rem solid hsl(0, 0%, 85%);
-  border-bottom: $border;
-  border-top-right-radius: .5rem;
-  border-top-left-radius: .5rem;
-  background-color: transparent;
-  outline: none;
-  resize: none;
-  display: hide;
-}
-
-.tweet-form-bottom {
-  margin-top: 0.3rem;
-  @include flex-row($justify: space-between);
-  flex-wrap: wrap;
-  align-items: center;
-  font-family: $font-family_Bungee;
-}
-
-.tweet-btn {
-  height: 1.5em;
-  margin-left: .125rem;
-  @include flex-column($align: center);
-  @include background_tweeter();
-  color: $color_secondary;
-}
-
-.tweet-btn:hover {
-  box-shadow: 0.2rem .125rem $color_border
-}
-
-.counter {
-  margin-right: .5rem;
-  @include flex-row($justify: right);
-  font-family: $font-family_Bungee;
-  color: slategrey;
+  
+  .tweet-form {
+    width: 100%;
+    @include flex-column($align: normal);
+    margin: 0 1rem;
+    
+    #tweet-text {
+      width: 100%;
+      margin-top: 1rem;
+      border: .2rem solid hsl(0, 0%, 85%);
+      border-bottom: $border;
+      border-top-right-radius: .5rem;
+      border-top-left-radius: .5rem;
+      background-color: transparent;
+      outline: none;
+      resize: none;
+      display: hide;
+    }
+    
+    .tweet-form-bottom {
+      margin-top: 0.3rem;
+      @include flex-row($justify: space-between);
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: $font-family_Bungee;
+      
+      .tweet-btn {
+        height: 1.5em;
+        margin-left: .125rem;
+        @include flex-column($align: center);
+        @include background_tweeter();
+        color: $color_secondary;
+      }
+      
+      .tweet-btn:hover {
+        box-shadow: 0.2rem .125rem $color_border
+      }
+      
+      .counter {
+        margin-right: .5rem;
+        @include flex-row($justify: right);
+        font-family: $font-family_Bungee;
+        color: slategrey;
+      }
+    }
+  }
 }

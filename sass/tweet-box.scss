@@ -21,35 +21,35 @@
   padding-top: .3rem;
   margin: .4rem;
   @include flex-row($justify: space-between);
-}
-
-.tweet-head-left {
-  display: flex;
-  align-items: center;
-}
-
-.tweet-avatar {
-  height: 2.25rem;
-  width: 2.25rem;
-  margin: .175rem;
-  fill: $color_icon;
-}
-
-.tweet-username {
-  height: 1.25rem;
-  margin: .175rem;
-  color: $color_tertiary;
-  @include flex-column($align: center);
-}
-
-.tweet-handle {
-  height: 1.25rem;
-  margin: .175rem;
-  margin-right: .75rem;
-  margin-block-start: .5rem;
-  font-size: .8rem;
-  color: $color_tertiary;
-  @include flex-column($align: center);
+  
+  .tweet-head-left {
+    display: flex;
+    align-items: center;
+    
+    .tweet-avatar {
+      height: 2.25rem;
+      width: 2.25rem;
+      margin: .175rem;
+      fill: $color_icon;
+    }
+    
+    .tweet-username {
+      height: 1.25rem;
+      margin: .175rem;
+      color: $color_tertiary;
+      @include flex-column($align: center);
+    }
+  }
+  /* head-right */
+  .tweet-handle {
+    height: 1.25rem;
+    margin: .175rem;
+    margin-right: .75rem;
+    margin-block-start: .5rem;
+    font-size: .8rem;
+    color: $color_tertiary;
+    @include flex-column($align: center);
+  }
 }
 
 
@@ -66,35 +66,32 @@
   margin: .4rem;
   border-top: $border;
   @include flex-row($justify: space-between);
-}
-
-
-.tweet-foot-right {
-  @include flex-row($justify: space-between);
-
-}
-
-/* foot-left */
-.tweet-age {
-  height: 1.25rem;
-  width: auto;
-  margin: .175rem;
-  font-size: .75rem;
-  color: $color_tertiary;
-}
-
-/* foot-right */
-.tweet-flag,
-.tweet-retweet,
-.tweet-love {
-  height: 1.25rem;
-  width: 1rem;
-  margin: .175rem;
-  fill: $color_icon;
-}
-
-.tweet-flag:hover,
-.tweet-retweet:hover,
-.tweet-love:hover {
-  fill: $color_accent;
+  
+  /* foot-left */
+  .tweet-age {
+    height: 1.25rem;
+    width: auto;
+    margin: .175rem;
+    font-size: .75rem;
+    color: $color_tertiary;
+  }
+  
+  .tweet-foot-right {
+    @include flex-row($justify: space-between);
+    
+    .tweet-flag,
+    .tweet-retweet,
+    .tweet-love {
+      height: 1.25rem;
+      width: 1rem;
+      margin: .175rem;
+      fill: $color_icon;
+    }
+    
+    .tweet-flag:hover,
+    .tweet-retweet:hover,
+    .tweet-love:hover {
+      fill: $color_accent;
+    }
+  }
 }

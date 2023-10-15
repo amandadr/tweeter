@@ -4,16 +4,14 @@
   flex-direction: column;
   align-items: center;
 }
-
-.tweet-form {
+.new-tweet .tweet-form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: normal;
   margin: 0 1rem;
 }
-
-#tweet-text {
+.new-tweet .tweet-form #tweet-text {
   width: 100%;
   margin-top: 1rem;
   border: 0.2rem solid hsl(0, 0%, 85%);
@@ -25,8 +23,7 @@
   resize: none;
   display: hide;
 }
-
-.tweet-form-bottom {
+.new-tweet .tweet-form .tweet-form-bottom {
   margin-top: 0.3rem;
   display: flex;
   flex-direction: row;
@@ -35,8 +32,7 @@
   align-items: center;
   font-family: "Bungee", sans-serif;
 }
-
-.tweet-btn {
+.new-tweet .tweet-form .tweet-form-bottom .tweet-btn {
   height: 1.5em;
   margin-left: 0.125rem;
   display: flex;
@@ -46,12 +42,10 @@
   background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
   color: #f6f3e9;
 }
-
-.tweet-btn:hover {
+.new-tweet .tweet-form .tweet-form-bottom .tweet-btn:hover {
   box-shadow: 0.2rem 0.125rem #42251a;
 }
-
-.counter {
+.new-tweet .tweet-form .tweet-form-bottom .counter {
   margin-right: 0.5rem;
   display: flex;
   flex-direction: row;

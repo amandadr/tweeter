@@ -8,15 +8,13 @@ nav {
   position: sticky;
   /* I prefer to use sticky over fixed position as it allows for less debugging */
 }
-
-.nav-span {
+nav .nav-span {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-#logo {
+nav .nav-span #logo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +22,7 @@ nav {
   font-family: "Bungee", sans-serif;
   font-size: 2.25rem;
 }
-
-.nav-right {
+nav .nav-span .nav-right {
   margin-inline-end: 3rem;
   font-size: 1.25rem;
   display: flex;
@@ -33,15 +30,13 @@ nav {
   align-items: center;
   justify-content: space-evenly;
 }
-
-.nav-aside {
+nav .nav-span .nav-right .nav-aside {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
-.fa-bounce {
+nav .nav-span .nav-right .fa-bounce {
   color: rgba(84, 81, 73, 0.75);
   display: flex;
   flex-direction: row;

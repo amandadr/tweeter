@@ -27,14 +27,14 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-main, .user-feed {
+body main,
+body .user-feed {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.inside-container {
+body main .inside-container,
+body .user-feed .inside-container {
   width: 90%;
   background-color: #f2f1e9;
   background-image: url(http://www.transparenttextures.com/patterns/grey-jean.png);
@@ -43,8 +43,8 @@ main, .user-feed {
   align-items: center;
   justify-content: center;
 }
-
-.error-log {
+body main .inside-container .error-log,
+body .user-feed .inside-container .error-log {
   font-size: 1em;
   margin-top: 0.75rem;
   display: flex;
@@ -53,16 +53,16 @@ main, .user-feed {
   border: 0.125rem solid #b22222;
   border-radius: 1rem;
 }
-
-#errorLog {
-  display: inline;
-  padding-inline: 0.8rem;
-}
-
-.errorIcon {
+body main .inside-container .error-log .errorIcon,
+body .user-feed .inside-container .error-log .errorIcon {
   height: 1.5rem;
   padding: 0.25rem;
   fill: #b22222;
+}
+body main .inside-container .error-log #errorLog,
+body .user-feed .inside-container .error-log #errorLog {
+  display: inline;
+  padding-inline: 0.8rem;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -72,7 +72,7 @@ main, .user-feed {
     justify-content: center;
     align-items: flex-start;
   }
-  .inside-container {
+  main .inside-container {
     margin-block-start: 4rem;
     margin-inline-start: 6rem;
     margin-inline-end: 2rem;

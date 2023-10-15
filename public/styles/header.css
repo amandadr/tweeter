@@ -1,5 +1,5 @@
-.header1 {
-  height: 65vh;
+.main-header {
+  height: 60vh;
   width: 100vw;
   background-color: #cbb87b;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
@@ -7,23 +7,19 @@
   flex-direction: column;
   align-items: center;
 }
-
-.pad {
+.main-header .pad {
   padding-top: 1rem;
 }
-
-.avatar {
+.main-header .avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-#avatarImg {
+.main-header .avatar #avatarImg {
   height: 40vh;
 }
-
-.name {
+.main-header .name {
   color: #42251a;
   display: flex;
   flex-direction: column;
