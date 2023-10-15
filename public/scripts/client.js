@@ -6,21 +6,21 @@
 
 
 // escape XSS,
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   // hide the error container
   $('.error-log').hide();
   $('.tweet-form').hide();
 
   // scroll back to top
-  var $toTop = $('#toTop');
+  let $toTop = $('#toTop');
 
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {
       $toTop.addClass('show');
     } else {
@@ -28,13 +28,13 @@ $(document).ready(function () {
     }
   });
 
-  $toTop.on('click', function (evt) {
+  $toTop.on('click', function(evt) {
     evt.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, '300');
   });
 
   //-- (LET'S GET) FUNCY HELP --//
-  const createTweetElement = function (tweetObj) {
+  const createTweetElement = function(tweetObj) {
     const escapeName = `<p>${escape(tweetObj.user.name)}</p>`;
     const escapeContent = `<p>${escape(tweetObj.content.text)}</p>`;
 
@@ -78,7 +78,7 @@ $(document).ready(function () {
     return $tweetMarkup;
   };
 
-  const renderTweets = function (tweetsArr) {
+  const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
       const tweetLength = tweet.content.text.length;
       if (tweetLength > 140 || tweetLength < 1) {
@@ -90,7 +90,7 @@ $(document).ready(function () {
     }
   };
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -101,18 +101,18 @@ $(document).ready(function () {
     });
   };
 
-  const preventSubmit = function (htmlClass) {
+  const preventSubmit = function(htmlClass) {
     $(htmlClass).on("click", ((evt) => {
       evt.preventSubmit();
       return false;
     }));
   };
 
-  const updateErrorText = function (txt) {
+  const updateErrorText = function(txt) {
     $('#errorLog').text(txt);
   };
 
-  const displayError = function (message, log, btn) {
+  const displayError = function(message, log, btn) {
     $('.error-log').slideDown("slow");
     updateErrorText(message);
     console.log(log);
@@ -129,7 +129,7 @@ $(document).ready(function () {
   const formBtn = '.tweet-btn';
 
   // submit on press of enter
-  $($form).keypress(function (evt) {
+  $($form).keypress(function(evt) {
     if (evt.which == 13) {
       $(formBtn).submit();
       return false;
@@ -141,19 +141,19 @@ $(document).ready(function () {
     evt.preventDefault();
 
     if ($form.is(':visible')) {
-      $form.slideUp("slow")
+      $form.slideUp("slow");
     } else {
       $form.slideDown("slow");
 
-      setTimeout(function () {
+      setTimeout(function() {
         $formText.focus();
       }, 1000);
 
       $formText.on("keypress", () => {
         if ($formText.length === 0) {
-          $("$formText::placeholder").css("color", "transparent")
+          $("$formText::placeholder").css("color", "transparent");
         }
-      })
+      });
     }
   });
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
 
 
     // ERROR CASES //
-    console.log($formText[0].value)
+    console.log($formText[0].value);
     if ($formText[0].value.length > 140) {
       // over char count
       const msg = "Oo they're ramblin' again... (tone it down, you're over count)";
@@ -186,7 +186,9 @@ $(document).ready(function () {
         data: tweetData,
         success: () => {
           console.log('the post request resolved successfully', $formText[0].value);
-          setTimeout(() => { location.reload() }, 300)
+          setTimeout(() => {
+            location.reload();
+          }, 300);
         },
         // error: (evt) => {
         //   evt.preventDefault();
