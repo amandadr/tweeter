@@ -1,18 +1,41 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. A swarm of friends come to life to put validation to your thoughts - in case your rubber duck is a little exhausted.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
+### Welcome to Tweeter:
+!["Mobile-screen Home Page"](https://github.com/amandadr/tweeter/blob/master/docs/mobile_welcome.png?raw=true)
+!["Desktop-screen Home Page"](https://github.com/amandadr/tweeter/blob/master/docs/desktop_welcome.png?raw=true)
 
-## Getting Started
+### Write something worth chatting about:
+!["Mobile-screen Create Tweet"](https://github.com/amandadr/tweeter/blob/master/docs/mobile_tweet.gif?raw=true)
+!["Desktop-screen Creat Tweet"](https://github.com/amandadr/tweeter/blob/master/docs/desktop_tweet.gif?raw=true)
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+### Have the best converstaion of your life:
+!["Mobile-screen Scroll"](https://github.com/amandadr/tweeter/blob/master/docs/mobile_scroll.gif?raw=true)
+!["Desktop-screen Scroll"](https://github.com/amandadr/tweeter/blob/master/docs/desktop_scroll.gif?raw=true)
+
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+- [ ] Node.js
+- [ ] Express
+- [ ] body-parser
+- [ ] chance
+- [ ] md5
+
+## Getting Started
+
+- clone this repository - `git clone git@github.com:amandadr/tweeter.git`.
+- Install all dependencies (`npm install`).
+- Run the development web server using `node express_server.js`; or `npm run local` using nodemon.
+- Click 'write a new tweet' to get going and see your thoughts come to virtual-life.
+
+
+### Features:
+- [ ] username display; edit `header1.avatar` and `header1.name` inside index.html to update your identity.
+- [ ] hideable tweet box; click write a new tweet to show/hide.
+- [ ] randomly generated pals to echo your thoughts; hit enter or click the tweet button to have your quote displayed chronologically.
+- [ ] a helpful 'back to top' button which disappears at the top of the page; click to jump back through your feed (and avoid having to confront that awkward thing you said back there).
+- [ ] relative sizing; desktop and tablet/mobile screen sizes are supported.
+
