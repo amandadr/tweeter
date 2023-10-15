@@ -135,12 +135,12 @@ $(document).ready(function () {
   };
 
   loadTweets();
-
+  
 
 
   // SUBMIT FORM //
   const $form = $('.tweet-form');
-  const $formText = $('#tweet-text');
+  const $formText = $('#tweetText');
   const formBtn = '.tweet-btn';
 
   // submit on press of enter
@@ -210,6 +210,6 @@ $(document).ready(function () {
         // }
       }); //ajax post
 
-    } // conditionals
-  }); //on submit
-});//docready
+    }
+  });
+});

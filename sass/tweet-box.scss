@@ -30,7 +30,7 @@
       height: 2.25rem;
       width: 2.25rem;
       margin: .175rem;
-      fill: $color_icon;
+      color: $color_icon;
     }
     
     .tweet-username {
@@ -85,13 +85,13 @@
       height: 1.25rem;
       width: 1rem;
       margin: .175rem;
-      fill: $color_icon;
+      color: $color_icon;
     }
     
     .tweet-flag:hover,
     .tweet-retweet:hover,
     .tweet-love:hover {
-      fill: $color_accent;
+      color: $color_accent;
     }
   }
 }

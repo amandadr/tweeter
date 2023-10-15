@@ -42,11 +42,10 @@ body {
             border: .125rem solid $color_error;
             border-radius: 1rem;
             
-            .errorIcon {
+            .error-icon {
               height: 1.5rem;
               padding: .25rem;
-              fill: $color_error;
-              
+              color: $color_error;
             }
             #errorLog {
               display: inline;
@@ -57,11 +56,14 @@ body {
     }
 }
 
-
-
+@media only screen and (max-width: 1023px) {
+  #mainPage {
+    @include flex-column($align: center);
+  }
+}
 
 @media only screen and (min-width: 1024px) {
-  #main-page {
+  #mainPage {
     @include flex-row($justify: space-between);
 
     .inside-container {

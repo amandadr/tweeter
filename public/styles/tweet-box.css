@@ -32,7 +32,7 @@
   height: 2.25rem;
   width: 2.25rem;
   margin: 0.175rem;
-  fill: #3f549d;
+  color: #3f549d;
 }
 .tweet-head .tweet-head-left .tweet-username {
   height: 1.25rem;
@@ -88,10 +88,10 @@
   height: 1.25rem;
   width: 1rem;
   margin: 0.175rem;
-  fill: #3f549d;
+  color: #3f549d;
 }
 .tweet-foot .tweet-foot-right .tweet-flag:hover,
 .tweet-foot .tweet-foot-right .tweet-retweet:hover,
 .tweet-foot .tweet-foot-right .tweet-love:hover {
-  fill: #665829;
+  color: #665829;
 }

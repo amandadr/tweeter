@@ -50,23 +50,30 @@ body main .inside-container .error-log, body .user-feed .inside-container .error
   border: 0.125rem solid #b22222;
   border-radius: 1rem;
 }
-body main .inside-container .error-log .errorIcon, body .user-feed .inside-container .error-log .errorIcon {
+body main .inside-container .error-log .error-icon, body .user-feed .inside-container .error-log .error-icon {
   height: 1.5rem;
   padding: 0.25rem;
-  fill: #b22222;
+  color: #b22222;
 }
 body main .inside-container .error-log #errorLog, body .user-feed .inside-container .error-log #errorLog {
   display: inline;
   padding-inline: 0.8rem;
 }
 
+@media only screen and (max-width: 1023px) {
+  #mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 @media only screen and (min-width: 1024px) {
-  #main-page {
+  #mainPage {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  #main-page .inside-container {
+  #mainPage .inside-container {
     margin-block-start: 4rem;
     margin-inline-start: 6rem;
     margin-inline-end: 2rem;
