@@ -8,91 +8,92 @@
   background-image: url("https://www.transparenttextures.com/patterns/dust.png");
   border: $border;
   @include flex-column($align: center);
-}
-
-.tweet-box:hover {
-  box-shadow: 0.2rem .125rem $background_blue;
-}
-
-
-.tweet-head {
-  height: 2rem;
-  width: 97%;
-  padding-top: .3rem;
-  margin: .4rem;
-  @include flex-row($justify: space-between);
   
-  .tweet-head-left {
-    display: flex;
-    align-items: center;
-    
-    .tweet-avatar {
-      height: 2.25rem;
-      width: 2.25rem;
-      margin: .175rem;
-      color: $color_icon;
-    }
-    
-    .tweet-username {
-      height: 1.25rem;
-      margin: .175rem;
-      color: $color_tertiary;
-      @include flex-column($align: normal);
-      justify-content: center;
-    }
-  }
-  /* head-right */
-  .tweet-handle {
-    height: 1.25rem;
-    margin: .175rem;
-    margin-right: .75rem;
-    margin-block-start: .5rem;
-    font-size: .8rem;
-    color: $color_tertiary;
-    @include flex-column($align: center);
-  }
-}
-
-
-.tweet-article {
-  width: 94%;
-  margin: .4rem;
-  color: $color_tertiary;
-}
-
-
-.tweet-foot {
-  height: 2rem;
-  width: 97%;
-  margin: .4rem;
-  border-top: $border;
-  @include flex-row($justify: space-between);
-  
-  /* foot-left */
-  .tweet-age {
-    height: 1.25rem;
-    width: auto;
-    margin: .175rem;
-    font-size: .75rem;
-    color: $color_tertiary;
+  .tweet-box:hover {
+    box-shadow: 0.2rem .125rem $background_blue;
   }
   
-  .tweet-foot-right {
+  
+  .tweet-head {
+    height: 2rem;
+    width: 97%;
+    padding-top: .3rem;
+    margin: .4rem;
     @include flex-row($justify: space-between);
     
-    .tweet-flag,
-    .tweet-retweet,
-    .tweet-love {
+    .tweet-head-left {
+      display: flex;
+      align-items: center;
+      
+      .tweet-avatar {
+        height: 2.25rem;
+        width: 2.25rem;
+        margin: .175rem;
+        color: $color_icon;
+      }
+      
+      .tweet-username {
+        height: 1.25rem;
+        margin: .175rem;
+        color: $color_tertiary;
+        @include flex-column($align: normal);
+        justify-content: center;
+      }
+    }
+    /* head-right */
+    .tweet-handle {
       height: 1.25rem;
-      width: 1rem;
       margin: .175rem;
-      color: $color_icon;
+      margin-right: .75rem;
+      margin-block-start: .5rem;
+      font-size: .8rem;
+      color: $color_tertiary;
+      @include flex-column($align: center);
+    }
+  }
+  
+  
+  .tweet-article {
+    width: 94%;
+    margin: .4rem;
+    color: $color_tertiary;
+  }
+  
+  
+  .tweet-foot {
+    height: 2rem;
+    width: 97%;
+    margin: .4rem;
+    border-top: $border;
+    @include flex-row($justify: space-between);
+    
+    /* foot-left */
+    .tweet-age {
+      height: 1.25rem;
+      width: auto;
+      margin: .175rem;
+      font-size: .75rem;
+      color: $color_tertiary;
     }
     
-    .tweet-flag:hover,
-    .tweet-retweet:hover,
-    .tweet-love:hover {
-      color: $color_accent;
+    .tweet-foot-right {
+      @include flex-row($justify: space-between);
+      
+      .tweet-flag,
+      .tweet-retweet,
+      .tweet-love {
+        height: 1.25rem;
+        width: 1rem;
+        margin: .175rem;
+        color: $color_icon;
+      }
+      
+      .tweet-flag:hover,
+      .tweet-retweet:hover,
+      .tweet-love:hover {
+        color: $color_accent;
+      }
     }
   }
 }
+
