@@ -12,8 +12,6 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-
-
 $(document).ready(function () {
   // hide the error container
   $('.error-log').hide();
@@ -128,6 +126,14 @@ $(document).ready(function () {
     $('#errorLog').text(txt);
   };
 
+  const displayError = function(message, log, btn) {
+    $('.error-log').slideDown("slow");
+    updateErrorText(message);
+    console.log(log);
+    preventSubmit(btn);
+    return false;
+  };
+
   loadTweets();
 
 
@@ -135,7 +141,15 @@ $(document).ready(function () {
   // SUBMIT FORM //
   const $form = $('.tweet-form');
   const $formText = $('#tweet-text');
-  const formBtn = $('.tweet-btn')
+  const formBtn = '.tweet-btn';
+
+  // submit on press of enter
+  $($form).keypress(function (evt) {
+    if (evt.which == 13) {
+      $(formBtn).submit();
+      return false;
+    }
+  });
 
   // display the tweet form
   $('.nav-right').on("click", (evt) => {
@@ -167,19 +181,15 @@ $(document).ready(function () {
     // ERROR CASES //
     console.log($formText[0].value)
     if ($formText[0].value.length > 140) {
-      let message = "Oo they're ramblin' again... (tone it down, you're over count)";
-      $('.error-log').slideDown("slow");
-      updateErrorText(message);
-      console.log("tweet over max length:", $formText[0].value.length);
-      preventSubmit(".tweet-btn");
-      return false;
+      // over char count
+      const msg = "Oo they're ramblin' again... (tone it down, you're over count)";
+      const log = ("tweet over max length:", $formText[0].value.length);
+      displayError(msg, log, formBtn);
     } else if ($formText[0].value.length < 1) {
-      let message = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
-      $('.error-log').slideDown("slow");
-      updateErrorText(message);
-      console.log("tweet empty :(");
-      preventSubmit(".tweet-btn");
-      return false;
+      // empty form
+      const msg = "You've got little to tell, and you don't say much (but you might!)... Please type a tweet";
+      const log = ("tweet empty :(");
+      displayError(msg, log, formBtn);
     } else {
       // grab the data from the form
       const tweetData = $form.serialize();
