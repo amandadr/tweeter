@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // --- our code goes here ---
   let count = 0;
-  $('#tweet-text').on('input', function() {
+  $('#tweetText').on('input', function() {
     count = this.value.length - 1;
     count++;
     const form = $(this).closest('.tweet-form');
